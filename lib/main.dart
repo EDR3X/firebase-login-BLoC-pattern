@@ -1,8 +1,9 @@
+import 'package:fireauth/router.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-import 'views/home_page.dart';
+import 'views/splash_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Firebase Auth",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const HomePage(),
+      home: const SplashPage(),
+      onGenerateRoute: (settings) => generateRoute(settings),
     );
   }
 }
