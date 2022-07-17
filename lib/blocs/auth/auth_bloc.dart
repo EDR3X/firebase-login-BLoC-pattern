@@ -40,4 +40,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await authRepository.signout();
     });
   }
+
+  @override
+  Future<void> close() {
+    authSubscription.cancel();
+    return super.close();
+  }
 }
