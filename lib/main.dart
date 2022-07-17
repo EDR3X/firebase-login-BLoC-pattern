@@ -31,6 +31,11 @@ class MyApp extends StatelessWidget {
             firebaseAuth: FirebaseAuth.instance,
           ),
         ),
+        RepositoryProvider<ProfileRepository>(
+          create: (context) => ProfileRepository(
+            firebaseFirestore: FirebaseFirestore.instance,
+          ),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -48,7 +53,12 @@ class MyApp extends StatelessWidget {
             create: (context) => SignupCubit(
               authRepository: context.read<AuthRepository>(),
             ),
-          )
+          ),
+          BlocProvider<ProfileCubit>(
+            create: (context) => ProfileCubit(
+              profileRepository: context.read<ProfileRepository>(),
+            ),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
