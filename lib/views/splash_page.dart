@@ -17,7 +17,14 @@ class SplashPage extends StatelessWidget {
         if (state.authStatus == AuthStatus.unauthenticated) {
           Navigator.pushNamed(context, SigninPage.routeName);
         } else if (state.authStatus == AuthStatus.authenticated) {
-          Navigator.pushNamed(context, HomePage.routeName);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            HomePage.routeName,
+            (route) =>
+                route.settings.name == ModalRoute.of(context)!.settings.name
+                    ? true
+                    : false,
+          );
         }
       },
       builder: (context, state) {
