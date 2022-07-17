@@ -5,8 +5,6 @@ import 'package:flutter/cupertino.dart';
 import '../models/custom_error.dart';
 
 void errorDialogue(BuildContext context, CustomError e) {
-  print("code: ${e.code}\n message: ${e.message}\n plugin: ${e.plugin}\n");
-
   if (Platform.isIOS) {
     showCupertinoDialog(
       context: context,

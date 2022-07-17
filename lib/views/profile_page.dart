@@ -1,4 +1,3 @@
-import 'package:fireauth/blocs/auth/auth_bloc.dart';
 import 'package:fireauth/blocs/exports.dart';
 import 'package:fireauth/utils/error_dialogue.dart';
 import 'package:flutter/material.dart';

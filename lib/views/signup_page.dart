@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:validators/validators.dart';
 
 import '../utils/error_dialogue.dart';
-import 'signin_page.dart';
 
 class SignupPage extends StatefulWidget {
   static const String routeName = '/signup-page';
@@ -31,8 +30,6 @@ class _SignupPageState extends State<SignupPage> {
     if (form == null || !form.validate()) return;
 
     form.save();
-
-    print('name: $_name, email: $_email, password: $_password');
 
     context.read<SignupCubit>().signup(
           name: _name!,
