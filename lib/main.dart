@@ -44,6 +44,11 @@ class MyApp extends StatelessWidget {
               authRepository: context.read<AuthRepository>(),
             ),
           ),
+          BlocProvider<SignupCubit>(
+            create: (context) => SignupCubit(
+              authRepository: context.read<AuthRepository>(),
+            ),
+          )
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
